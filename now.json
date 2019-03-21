@@ -1,11 +1,14 @@
 {
     "version": 2,
-    "name": "wmdd-data-validation",
+    "name": "yup-wk-10",
     "alias": "maitreyi.now.sh",
     "builds": [
-      { "src": "index.js", "use": "@now/node" }
+      { "src": "/yup/index.js", "use": "@now/node" },
+      { "src": "/superstruct/index.js", "use": "@now/node" }
+
     ],
     "routes": [
-      {"src": "/", "dest": "/index.js"}
+      {"src": "/(.*)", "dest": "/index.js"}
+
     ]
   }
