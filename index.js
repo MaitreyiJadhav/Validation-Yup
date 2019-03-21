@@ -12,20 +12,3 @@ const myStructure = yup.object().shape({
 
   });
 
-module.exports = async (req, res) => {
-    const data = await json(req)
-    myStructure.isValid(data)
-    .then(function(valid) {
-      
-      if(valid){
-        send(res, 200, data)
-
-      }
-      else{
-          send(res, 400, "Your data does not validate")
-      }
-    }).catch(function(){
-        send(res, 400, data)
-    })
-}
-
